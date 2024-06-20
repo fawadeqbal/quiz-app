@@ -24,6 +24,7 @@ public class QuestionController {
 
     @GetMapping("allQuestions")
     public ResponseEntity<List<Question>> getAllQuestions(){
+        System.out.println(environment.getProperty("local.server.port"));
         return questionService.getAllQuestions();
     }
 
@@ -48,7 +49,7 @@ public class QuestionController {
 
     @PostMapping("getQuestions")
     public ResponseEntity<List<QuestionWrapper>> getQuestionsFromId(@RequestBody List<Integer> questionIds){
-        System.out.println(environment.getProperty("local.server.port"));
+
         return questionService.getQuestionsFromId(questionIds);
     }
 
