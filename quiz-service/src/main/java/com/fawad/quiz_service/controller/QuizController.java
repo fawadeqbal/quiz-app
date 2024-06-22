@@ -1,6 +1,7 @@
 package com.fawad.quiz_service.controller;
 
 import com.fawad.quiz_service.model.QuestionWrapper;
+import com.fawad.quiz_service.model.Quiz;
 import com.fawad.quiz_service.model.QuizDto;
 import com.fawad.quiz_service.model.Response;
 import com.fawad.quiz_service.service.QuizService;
@@ -20,6 +21,11 @@ public class QuizController {
     @PostMapping("create")
     public ResponseEntity<String> createQuiz(@RequestBody QuizDto quizDto){
         return quizService.createQuiz(quizDto.getCategoryName(), quizDto.getNumQuestions(), quizDto.getTitle());
+    }
+
+    @GetMapping("get")
+    public ResponseEntity<List<Quiz>> getAllQuizes(){
+        return quizService.getAllQuizes();
     }
 
     @GetMapping("get/{id}")

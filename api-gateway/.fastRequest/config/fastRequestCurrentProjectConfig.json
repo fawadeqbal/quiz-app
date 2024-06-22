@@ -4,7 +4,12 @@
 		"domain":"https://api.apifox.com",
 		"syncAfterSave":false
 	},
-	"dataList":[],
+	"dataList":[
+		{
+			"hostGroup":[],
+			"name":"api-gateway"
+		}
+	],
 	"envList":[],
 	"headerList":[],
 	"ignoreParseFieldList":[],
@@ -12,7 +17,9 @@
 	"pmCollectionId":"",
 	"postScript":"",
 	"preScript":"",
-	"projectList":[],
+	"projectList":[
+		"api-gateway"
+	],
 	"syncModel":{
 		"branch":"master",
 		"domain":"https://github.com",

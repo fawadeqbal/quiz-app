@@ -1,0 +1,28 @@
+/* src/components/dashboard/Dashboard.css */
+.dashboard {
+    padding: 20px;
+  }
+  
+  .dashboard h1 {
+    margin-bottom: 20px;
+  }
+  
+  .dashboard ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .dashboard li {
+    margin: 10px 0;
+  }
+  
+  .dashboard a {
+    text-decoration: none;
+    color: #007bff;
+    transition: color 0.2s;
+  }
+  
+  .dashboard a:hover {
+    color: #0056b3;
+  }
+  
