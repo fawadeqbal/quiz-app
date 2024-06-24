@@ -15,7 +15,8 @@ const ViewQuestions = () => {
         setFilteredQuestions(data);
       })
       .catch(error => console.error('Error fetching questions:', error));
-  }, []);
+      
+  },[]);
 
   useEffect(() => {
     const lowerCaseSearchTerm = searchTerm.toLowerCase();

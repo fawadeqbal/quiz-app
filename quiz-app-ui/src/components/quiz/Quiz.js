@@ -19,7 +19,7 @@ const Quiz = () => {
       try {
         const quizData = await quizService.fetchQuizById(id);
         setQuestions(quizData);
-        startTimer(); // Start timer for the first question
+        
       } catch (error) {
         // Handle error if needed
         console.error('Error fetching quiz:', error);
@@ -30,20 +30,7 @@ const Quiz = () => {
   }, [id]);
 
   // Start timer for current question
-  const startTimer = () => {
-    setTimer(30); // Reset timer to 30 seconds
-    clearInterval(timerInterval); // Clear any existing interval
-    setTimerInterval(setInterval(() => {
-      setTimer(prevTimer => {
-        if (prevTimer === 0) {
-          handleNext(); // Move to next question if time runs out
-          return 30; // Reset timer for next question
-        } else {
-          return prevTimer - 1;
-        }
-      });
-    }, 1000));
-  };
+
 
   // Handle change in selected option for each question
   const handleChange = (questionId, value) => {
@@ -101,7 +88,7 @@ const Quiz = () => {
     clearInterval(timerInterval); // Stop timer for current question
     if (currentQuestionIndex < questions.length - 1) {
       setCurrentQuestionIndex(prevIndex => prevIndex + 1);
-      startTimer(); // Start timer for the next question
+     
     } else {
       handleSubmit(); // Submit quiz if on the last question
     }
