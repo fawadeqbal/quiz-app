@@ -48,6 +48,11 @@ public class QuestionController {
         return questionService.getQuestionsForQuiz(categoryName, numQuestions);
     }
 
+    @GetMapping("categories")
+    public ResponseEntity<List<String>> getAllCategories(){
+        return questionService.getAllCategories();
+    }
+
     @PostMapping("getQuestions")
     public ResponseEntity<List<QuestionWrapper>> getQuestionsFromId(@RequestBody List<Integer> questionIds){
         System.out.println(environment.getProperty("local.server.port"));

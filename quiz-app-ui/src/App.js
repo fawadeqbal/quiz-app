@@ -1,17 +1,23 @@
-import './App.css';
-import QuizList from './components/quiz/QuizList';
-import QuizPage from './components/quiz/QuizPage'
-import Dashboard from './components/dashboard/Dashboard'
-import {Route,Routes} from 'react-router-dom'
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import "./App.css"
+import Quiz from './components/quiz/Quiz';
+import CreateQuiz from './components/quiz/CreateQuiz';
+import AdminDashboard from './components/dashboard/AdminDashboard';
+import ParticipantDashboard from './components/dashboard/ParticipantDashboard';
+import Home from './pages/Home';
+
 function App() {
   return (
-    <Routes>
-      <Route path="/" element={<Dashboard  />} />
-      <Route path="/add-quiz" element={<Dashboard  />} />
-      <Route path="/quiz" element={<QuizList  />} />
-      <Route path="/quiz/:quizId" element={<QuizPage />} />
-     
-    </Routes>
+      <div className="min-h-screen bg-gray-100">
+        <Routes>
+        <Route path="/" element={<Home />} />
+          <Route path="/quiz/:id" element={<Quiz />} />
+          <Route path="/create-quiz" element={<CreateQuiz />} />
+          <Route path="/admin" element={<AdminDashboard />} />
+          <Route path="/participate" element={<ParticipantDashboard />} />
+        </Routes>
+      </div>
   );
 }
 

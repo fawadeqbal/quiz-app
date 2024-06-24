@@ -78,6 +78,10 @@ public class QuestionService {
         return new ResponseEntity<>(wrappers, HttpStatus.OK);
     }
 
+    public ResponseEntity<List<String>> getAllCategories(){
+        return ResponseEntity.ok().body(questionDao.findDistinctCategories());
+    }
+
     public ResponseEntity<Integer> getScore(List<Response> responses) {
 
 
