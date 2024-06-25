@@ -12,6 +12,9 @@ target/
 .settings
 .springBeans
 .sts4-cache
+/out
+.fastRequest
+.mvn
 
 ### IntelliJ IDEA ###
 .idea
